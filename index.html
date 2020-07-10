@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Google Cloud TTS in JavaScript</title>
+  <meta name="description" content="A simple demo that uses the Google Cloud Text-To-Speech API in JavaScript">
+  <meta name="author" content="Daniel Davison - HMI - University of Twente">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div id="description">
+        <h1>Description</h1>
+        A simple demo that uses the <a href="https://cloud.google.com/text-to-speech">Google Cloud Text-To-Speech API</a> in JavaScript.
+    </div>
+    <div id="setup">
+        <h1>Setup</h1>
+        Create your personal <a href="https://cloud.google.com/docs/authentication/api-keys">Google Could API key</a>. <br />
+        Make sure billing is enabled on your account (there should be a 12-month trial with some free credits if you sign up for the first time).<br />
+        <label for="api-key">Enter the API key here: </label>
+        <input type="text" id="api-key" name="api-key" size="50" value=""/><br />
+        <button onclick="init()">Submit</button>
+    </div>
+
+    <div id="config">
+        <h1>Configuration</h1>
+        <label for="languages">Select a language: </label>
+        <select name="languages" id="languages" onchange="populateGenders();populateVoices();"></select><br />
+        <label for="genders">Select a gender: </label>
+        <select name="genders" id="genders" onchange="populateVoices()"></select><br />
+        <label for="voices">Select a voice: </label>
+        <select name="voices" id="voices"></select>
+    </div>
+    <div id="demo">
+        <h1>Try it!</h1>
+        Enter your text here and press the speak button.<br/>
+        <textarea id="text-to-speak" name="text-to-speak" rows="4" cols="50">Enter your text here</textarea><br />
+        <button onclick="speak()">Speak</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
