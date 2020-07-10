@@ -16,6 +16,9 @@
 //holds the list of all voices after they are retrieved from the Google API
 var voices = [];
 
+var apiKeyInput = document.getElementById("api-key");
+apiKeyInput.value = defaultApiKey; //set it to the default value defined in api-key.js
+
 var languageSelect = document.getElementById("languages");
 var gendersSelect = document.getElementById("genders");
 var voicesSelect = document.getElementById("voices");
@@ -23,7 +26,7 @@ var textToSpeak = document.getElementById("text-to-speak");
 
 //returns the api key that was entered, or shows an alert when the input is empty
 function getApiKey(){
-    let apiKey = document.getElementById("api-key").value;
+    let apiKey = apiKeyInput.value;
     if(apiKey === ""){
         alert("Please enter an API key!");
         return false;

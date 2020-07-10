@@ -5,10 +5,11 @@ A simple demo that uses the [Google Cloud Text-To-Speech API](https://cloud.goog
 
 # Setup
 1. [Create your personal Google Could API key](https://cloud.google.com/docs/authentication/api-keys). Make sure billing is enabled on your account (there should be a 12-month trial with some free credits if you sign up for the first time).
-1. Clone this repo, open the `index.html` in a browser.
-1. Enter the API key in the web page and press the "Submit" button.
+1. Optional: Add your API key to `js/api-key.js` to have it automatically filled in the input field. WARNING - Do not commit your API key in git! Make sure you tell git to ignore changes to this file: `git update-index --skip-worktree js/api-key.js`
 
 # Using the demo
+1. Clone this repo, open the `index.html` in a browser.
+1. Enter the API key in the web page and press the "Submit" button.
 1. Select the preferred language, gender and voice (WaveNet voices typically sound better than Standard voices).
 1. Enter some text and press the "Speak" button.
 1. You should now hear the spoken audio.
