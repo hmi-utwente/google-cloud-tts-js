@@ -47,6 +47,12 @@ function getApiKey(){
 function init(){
     if(!getApiKey()) return;
     retrieveAvailableVoices().then(data => {
+        if (data.error) {
+            console.error("Got error when requesting voices: ", data);
+            alert("ERROR\n" + data.error.code + " - " + data.error.status + "\n" + data.error.message);
+            return;
+        }
+    
         //store globally for later use in the other functions
         voices = data.voices;
 
@@ -64,6 +70,7 @@ async function retrieveAvailableVoices(){
             // 'Content-Type': 'application/x-www-form-urlencoded',
           }
     });
+    
     return response.json();
 }
 
@@ -145,6 +152,12 @@ function populateVoices(){
 function speak(){
     if(!getApiKey()) return;
     retrieveSpeechAudio(textToSpeak.value).then(data => {
+        if (data.error) {
+            console.error("Got error when requesting speech: ", data);
+            alert("ERROR\n" + data.error.code + " - " + data.error.status + "\n" + data.error.message);
+            return;
+        }
+    
         let sound = new Audio("data:audio/wav;base64,"+data.audioContent);
         sound.play();
     });
