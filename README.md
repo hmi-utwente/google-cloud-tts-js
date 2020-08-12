@@ -1,6 +1,7 @@
 
 # Description
 A simple demo that uses the [Google Cloud Text-To-Speech API](https://cloud.google.com/text-to-speech) in JavaScript.
+[Try it out!](https://hmi-utwente.github.io/google-cloud-tts-js/)
 (Tested in Firefox)
 
 # Setup
